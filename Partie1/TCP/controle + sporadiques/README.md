@@ -1,11 +1,15 @@
-# TCP
+# TCP Controle et Sporadiques
+
+## Sommaire
+1. Client
+2. Serveur
 
 Afin de communiquer en TCP via python il faut utiliser des ```socket```.
 Vous pouvez retrouver différents exemple de script python permettant de communiquer en TCP.
 
-## Client
+## 1. Client
 
-En effet, le fichier ```bind_socket.py``` permet de comprendre facilement comment se connecter à un serveur TCP.
+Le fichier ```bind_socket.py``` permet de comprendre facilement comment se connecter à un serveur TCP.
 En outre, il faut dans un premier temps créer la ```socket``` :
 ```
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -34,4 +38,41 @@ s.sendall(message)
 reply = s.recv(4096)
 ```
 
-## Serveur
+## 2. Serveur
+
+Il y a différents exemple de fichiers de serveur TCP :
+* ```socket_server.py``` est un exemple simple de fichier de serveur. 
+* ```socket_server_with_select.py``` est un serveur pouvant accepter plusieurs clients.
+* ```socket_server_threads.py``` est un serveur pouvant accepter plusieurs clients et utilisant des ```threads```.
+
+Il faut dans un premier temps créer la ```socket``` :
+```
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+```
+
+Ensuite, il faut définir le ```port``` et le ```host``` du serveur :
+```
+HOST = '127.0.0.1'
+PORT = 8888	
+```
+
+Par la suite, il faut ```bind``` la ```socket``` afin d'assigner le ```port``` et le ```host``` :
+```
+s.bind((HOST, PORT))
+```
+
+Puis, nous écoutons la ```socket``` :
+```
+s.listen(10)
+```
+
+Enfin, nous sommes prêt à accepter les clients :
+```
+conn, addr = s.accept()
+```
+
+De plus, pour recevoir puis envoyer un message il suffit de faire comme suit :
+```
+data = sock.recv(RECV_BUFFER)
+sock.send('OK ... ' + data)
+```
