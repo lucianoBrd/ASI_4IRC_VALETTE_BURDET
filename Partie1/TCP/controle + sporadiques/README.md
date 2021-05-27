@@ -7,6 +7,9 @@
 Afin de communiquer en TCP via python il faut utiliser des ```socket```.
 Vous pouvez retrouver différents exemple de script python permettant de communiquer en TCP.
 
+Afin de lancer les scripts, utiliser python 2. Par exemple :
+```python2 bind_socket.py```
+
 ## 1. Client
 
 Le fichier ```bind_socket.py``` permet de comprendre facilement comment se connecter à un serveur TCP.
