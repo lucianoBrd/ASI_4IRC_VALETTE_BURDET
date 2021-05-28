@@ -19,10 +19,6 @@ def image_streaming_ui():
     return render_template('image_streaming.html')
 
 #--------------------------------------------API--------------------------------------------------
-#@aci.route('/api/connexion', methods=['POST'])
-#def auth_aci_post():
-#    apic_hostname = request.form.get('hostname')
-
 @image_streaming.route('/video_feed')
 def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
