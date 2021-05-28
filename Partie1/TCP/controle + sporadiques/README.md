@@ -34,7 +34,7 @@ Enfin, nous pouvons nous connecter :
 s.connect((remote_ip , port))
 ```
 
-De plus, vous pouvez également trouver le fichier ```socket_client.py```. Ce srcipt permet de se connecter en TCP à un serveur et de lui envoyer un message comme des remontés de capteur, informations de contrôle...
+De plus, vous pouvez également trouver le fichier ```socket_client.py```. Ce srcipt permet de se connecter en TCP à un serveur et de lui envoyer un message comme des remontés de capteur, informations de contrôle... Il faut donc que le serveur soit lancé avant le client.
 En somme, une fois connecté au serveur, il suffit de faire comme ci-dessous pour envoyer puis recevoir un message :
 ```
 s.sendall(message)
