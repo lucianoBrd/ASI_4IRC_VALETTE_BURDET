@@ -18,4 +18,4 @@ response = requests.post(test_url, data=img_encoded.tostring(), headers=headers)
 # decode response
 print(json.loads(response.text))
 
-# expected output: {u'message': u'image received. size=124x124'}
+# expected output: {u'message': u'image received. size=285x177'}
