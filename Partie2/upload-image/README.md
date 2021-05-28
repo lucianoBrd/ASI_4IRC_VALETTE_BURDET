@@ -2,7 +2,7 @@
 
 ## Sommaire
 1. Serveur
-2. Client
+2. Navigateur
 
 Afin de lancer les scripts, utiliser python 3. Par exemple :
 ```python3 server.py```
