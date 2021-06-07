@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AppFlask-VALETTE-BURDET</title>
+    </head>
+
+<body>
+<h1>Bienvenue sur l'application Flask du projet ASI Robotique</h1>    
+<h2>Sélectionner un module à utiliser</h2>    
+<ul>
+    <li> <a href="{{url_for('image_par_url.image_par_url_ui')}}">Image par URL</a></li>
+    <li> <a href="{{url_for('image_generation.image_generation_ui')}}">Image par génération d'URL</a></li>
+    <li> <a href="{{url_for('image_fichier.image_fichier_ui')}}">Image par fichier</a></li>
+    <li> <a href="{{url_for('image_streaming.image_streaming_ui')}}">Image en streaming</a></li>
+</ul>
+        
+</body>
+
+
+
+</html>
