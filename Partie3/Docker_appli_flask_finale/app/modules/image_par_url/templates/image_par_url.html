@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AppFlask-VALETTE-BURDET</title>
+    </head>
+
+<body>  
+<h2>Image par URL</h2>   
+<p> on reçoit l'image ci-dessous via un url :</p>
+<img src="https://www.google.com/images/srpr/logo11w.png" alt="exemple de texte alternatif"/>
+
+<p> Pour envoyer cette image vers le serveur et donc l'enregsitrer dans le dossier /module/image_par_url/static/image cliquer sur le bouton ci-dessous</p>
+<input onclick="location.href='{{ url_for('image_par_url.download_static') }}';" type="button" value="Envoyer vers le serveur">
+
+<br>
+<br>
+<form class="connexion-card" method="POST" action="uploads_url">
+    <div class='signup'>Vous pouvez aussi renseigner une url dans le champs ci-dessous afin de télécharger l'image</div>
+    <div class="form-group">
+    <label for="exampleInputEmail1">URL de l'image</label>
+    <input type="text" name="image_url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="image_url">
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer l'image vers le serveur</button>
+</form>
+
+</body>
+
+
+
+
+</html>
