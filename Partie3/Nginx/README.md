@@ -71,7 +71,7 @@ File : ```/etc/nginx/sites-available/project```
 ```
 server {
     listen 80;
-    server_name your_domain www.your_domain;
+    server_name test.com www.test.com;
 
     location / {
         include uwsgi_params;
@@ -89,7 +89,12 @@ server {
 ```sudo ufw allow 'Nginx Full'```
 
 Accéder sur navigateur :
-```http://your_domain```
+```http://test.com```
+
+Si besoin, modifier le fichier ```/etc/hosts``` :
+```
+127.0.0.1	test.com
+```
 
 
 Voir logs :
