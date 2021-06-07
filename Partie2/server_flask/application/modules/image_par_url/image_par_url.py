@@ -17,12 +17,21 @@ def image_par_url_ui():
 
 #--------------------------------------------API--------------------------------------------------
 
-@image_par_url.route('/uploads', methods=['GET', 'POST'])
-def download():
+@image_par_url.route('/upload_google_image', methods=['GET', 'POST'])
+def download_static():
 
     r = requests.get('https://www.google.com/images/srpr/logo11w.png')
 
     with open('application/modules/image_par_url/static/images/image1.png', 'wb') as f:
+        f.write(r.content)
+    return render_template('image_par_url.html')
+
+@image_par_url.route('/uploads_url', methods=['GET', 'POST'])
+def download_url():
+
+    r = requests.get(request.form.get('image_url'))
+
+    with open('application/modules/image_par_url/static/images/image2.png', 'wb') as f:
         f.write(r.content)
     return render_template('image_par_url.html')
 if __name__ == '__main__':
